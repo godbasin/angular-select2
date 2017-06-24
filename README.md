@@ -1,8 +1,8 @@
-# Angular4-Select2
+# Angular-Select2-Component
 
 ## Related Versions
 
-Angular4-Select2 is baseed on these plugins and libs(version):
+Angular-Select2-Component is baseed on these plugins and libs(version):
 - [angular(>= 2.0-release)](https://angular.io/)
 - [jQuery](https://jquery.com/)
 - [select2](https://select2.github.io/)
@@ -12,7 +12,10 @@ Angular4-Select2 is baseed on these plugins and libs(version):
 ### Install
 ``` cmd
 // npm install
-npm install angular4-select2 --save
+npm install angular-select2-component --save
+
+// if you have not installed jquery
+npm install jquery --save
 ```
 
 ### Use as component
@@ -20,7 +23,7 @@ npm install angular4-select2 --save
 // import NgModule
 import {NgModule} from '@angular/core';
 // import Select2Component
-import {Select2Component} from 'angular4-select2';
+import {Select2Component} from 'angular-select2-component';
 
 @NgModule({
   // ...
