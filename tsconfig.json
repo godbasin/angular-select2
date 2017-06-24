@@ -14,7 +14,7 @@
         ]
     },
     "files": [
-        "index.ts"
+        "./src/select2.component.ts"
     ],
     "exclude": [
         "node_modules",

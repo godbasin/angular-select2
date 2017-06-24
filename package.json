@@ -1,10 +1,9 @@
 {
   "name": "angular4-select2",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "select2 in angular4(v4.0+)",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
@@ -12,6 +11,8 @@
   },
   "keywords": [
     "angular",
+    "angular2",
+    "angular4",
     "select2"
   ],
   "author": "godbasin <wangbeishan@163.com> (https://github.com/godbasin)",
@@ -24,13 +25,8 @@
   },
   "homepage": "https://github.com/godbasin/angular-select2#readme",
   "devDependencies": {
-    "@types/node": "^8.0.1",
+    "@angular/core": "~4.1.2",
+    "@angular/forms": "~4.1.2",
     "typescript": "^2.3.4"
-  },
-  "dependencies": {
-    "@angular/core": "^4.2.4",
-    "@angular/forms": "^4.2.4",
-    "jquery": "^3.2.1",
-    "rxjs": "^5.4.1"
   }
 }

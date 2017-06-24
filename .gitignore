@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 
 # Ignored files
-*.js
-*.map
-*.d.ts
+# *.ts
+# *.js
+# *.map
+# *.d.ts

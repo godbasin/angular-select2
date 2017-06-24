@@ -2,7 +2,7 @@
  * desc：select2
  * how to use: <select2 [(ngModel)]='your_prop' [options]='your_options' [disabled]='your_condition' ></select2>
  */
-const $ = require('jquery');
+declare const $: any;
 require('./select2/select2.min.js');
 import { Component, Input, Output, AfterViewInit, ElementRef, EventEmitter, OnChanges } from '@angular/core';
 import { CustomInputComponent, customInputAccessor } from './custom-input';
