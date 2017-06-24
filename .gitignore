@@ -1,0 +1,8 @@
+# Node generated files
+node_modules
+npm-debug.log
+
+# Ignored files
+*.js
+*.map
+*.d.ts

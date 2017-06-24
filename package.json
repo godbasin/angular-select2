@@ -1,0 +1,35 @@
+{
+  "name": "angular-select2",
+  "version": "1.0.0",
+  "description": "select2 in angular(v4.0+)",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godbasin/angular-select2.git"
+  },
+  "keywords": [
+    "angular",
+    "select2"
+  ],
+  "author": "godbasin <wangbeishan@163.com> (https://github.com/godbasin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godbasin/angular-select2/issues"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "homepage": "https://github.com/godbasin/angular-select2#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.1",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "jquery": "^3.2.1"
+  }
+}
