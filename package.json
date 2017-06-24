@@ -1,13 +1,13 @@
 {
   "name": "angular4-select2",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "select2 in angular4(v4.0+)",
   "main": "index.ts",
   "scripts": {
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/godbasin/angular-select2.git"
+    "url": "git+https://github.com/godbasin/angular4-select2.git"
   },
   "keywords": [
     "angular",
@@ -18,15 +18,10 @@
   "author": "godbasin <wangbeishan@163.com> (https://github.com/godbasin)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/godbasin/angular-select2/issues"
+    "url": "https://github.com/godbasin/angular4-select2/issues"
   },
   "engines": {
     "node": ">=4.2.4"
   },
-  "homepage": "https://github.com/godbasin/angular-select2#readme",
-  "devDependencies": {
-    "@angular/core": "~4.1.2",
-    "@angular/forms": "~4.1.2",
-    "typescript": "^2.3.4"
-  }
+  "homepage": "https://github.com/godbasin/angular4-select2#readme"
 }
