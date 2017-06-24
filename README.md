@@ -1,28 +1,52 @@
-# Angular4Select2
+# Angular4-Select2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
-## Development server
+## Instructions
+This project is built for showing how to use angular-select2-component.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Angular-Select2-Component
 
-## Code scaffolding
+Source code in: [https://github.com/godbasin/angular4-select2/tree/npm-publish-code](https://github.com/godbasin/angular4-select2/tree/npm-publish-code).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## Related Versions
 
-## Build
+Angular-Select2-Component is baseed on these plugins and libs(version):
+- [angular(>= 2.0-release)](https://angular.io/)
+- [jQuery](https://jquery.com/)
+- [select2](https://select2.github.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## How to use 
+---
+### Install
+``` cmd
+// npm install
+npm install angular-select2-component --save
 
-## Running unit tests
+// if you have not installed jquery
+npm install jquery --save
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Use as component
+1. Import component.
 
-## Running end-to-end tests
+``` javascript
+// import NgModule
+import {NgModule} from '@angular/core';
+// import Select2Component
+import {Select2Component} from 'angular-select2-component';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+@NgModule({
+  // ...
+  // declare components
+  declarations: [Select2Component]
+})
+export class YourModule {
+}
+```
 
-## Further help
+2. Template.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+``` html
+<select2 [options]="options" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
+```
