@@ -19,6 +19,8 @@ npm install jquery --save
 ```
 
 ### Use as component
+1. Import component.
+
 ``` javascript
 // import NgModule
 import {NgModule} from '@angular/core';
@@ -32,4 +34,10 @@ import {Select2Component} from 'angular-select2-component';
 })
 export class YourModule {
 }
+```
+
+2. Template.
+
+``` html
+<select2 [options]="options" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
 ```
