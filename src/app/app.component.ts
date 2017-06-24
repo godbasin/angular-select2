@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  options: any[] = ['选项1', '选项2', '选项3', '选项4', '选项5'];
+  optionSelected: any;
+
+  onSelected(ev){
+    alert(ev);
+  }
 }
