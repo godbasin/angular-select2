@@ -1,7 +1,7 @@
 {
-  "name": "angular-select2",
+  "name": "angular4-select2",
   "version": "1.0.0",
-  "description": "select2 in angular(v4.0+)",
+  "description": "select2 in angular4(v4.0+)",
   "main": "index.js",
   "scripts": {
     "prepublish": "tsc"
