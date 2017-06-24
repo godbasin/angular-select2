@@ -1,4 +1,4 @@
-# Angular4-Select2
+# Angular-Select2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
