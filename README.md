@@ -41,3 +41,12 @@ export class YourModule {
 ``` html
 <select2 [options]="options" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
 ```
+
+### Options
+- `options`: `option[]`
+  - select options for select2
+  - `option`: `{id: value, text: key}` or `string`
+- `ngModel`: option value that is selected(`id` or `string`)
+- `onSelect`
+  - callback when option selected
+  - parmas: `option`(`{id: value, text: key}` or `string`)
