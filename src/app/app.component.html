@@ -1,3 +1,7 @@
-<select2 [options]="options" [(ngModel)]="optionSelected" (selected)="onSelect($event)"></select2>
-
-  
+<div class="form-group">
+    <label class="col-md-2 control-label" style="text-align: right;">Select2</label>
+    <div class="col-md-6">
+        <select2 [options]="options" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
+        <p *ngIf="optionSelected">{{optionSelected}}</p>
+    </div>
+</div>
