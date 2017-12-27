@@ -42,9 +42,6 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
                 // options change
                 this.select2.empty();
                 this.select2.select2({data: this.options});
-            }else if(changes.value){
-                // value change
-                this.select2.select2('val', [this.value]);
             }
             this.select2.trigger('change');
         }else{
@@ -56,6 +53,7 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
                 this.onSelect.emit({ id, text });
             });
         }
+        this.select2.select2('val', [this.value]);
     }
 
     ngOnDestroy(){
