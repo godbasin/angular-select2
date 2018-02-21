@@ -50,3 +50,6 @@ export class YourModule {
 - `onSelect`
   - callback when option selected
   - parmas: `option`(`{id: value, text: key}` or `string`)
+- `settings`
+  - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
+  - `setting`: `{ settingOption: value, settingOption: value }`
