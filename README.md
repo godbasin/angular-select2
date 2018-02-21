@@ -16,7 +16,7 @@ Angular-Select2-Component is baseed on these plugins and libs(version):
 - [jQuery](https://jquery.com/)
 - [select2](https://select2.github.io/)
 
-## How to use 
+## How to use
 ---
 ### Install
 ``` cmd
@@ -48,7 +48,7 @@ export class YourModule {
 2. Template.
 
 ``` html
-<select2 [options]="options" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
+<select2 [options]="options" [settings]="{ setting: value }" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
 ```
 
 ### Options
@@ -59,3 +59,6 @@ export class YourModule {
 - `onSelect`
   - callback when option selected
   - parmas: `option`(`{id: value, text: key}` or `string`)
+- `settings`
+  - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
+  - `setting`: `{ settingOption: value, settingOption: value }`
