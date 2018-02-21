@@ -5,7 +5,7 @@
 declare var require: any
 const $ = require('jquery');
 require('./select2/select2.min.js');
-import { Component, Input, Output, AfterViewInit, ElementRef, EventEmitter, OnChanges, OnDestroy, 
+import { Component, Input, Output, AfterViewInit, ElementRef, EventEmitter, OnChanges, OnDestroy,
     ViewEncapsulation, SimpleChanges } from '@angular/core';
 import { CustomInputComponent, customInputAccessor } from './custom-input';
 
@@ -22,6 +22,12 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
     @Input() disabled: boolean = false;
     @Output() onSelect = new EventEmitter<any>();
 
+    /**
+     * Added options that control how the visuals of select2 works
+     **/
+    @Input() settings: object;
+
+
     select2: any;
     private el: ElementRef;
 
@@ -35,19 +41,23 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        // Merge both options and data
+        let settings = {data: this.options};
+        if(typeof this.settings == 'object'){
+          settings = Object.assign(this.settings, settings);
+        }
+
         // Checking if the plugin is initialized
         if (this.select2 && this.select2.hasClass("select2-hidden-accessible")) {
             // Select2 has been initialized
             if(changes.options){
                 // options change
                 this.select2.empty();
-                this.select2.select2({data: this.options});
+                this.select2.select2(settings);
             }
             this.select2.trigger('change');
         }else{
-            this.select2 = $(this.el.nativeElement).find('select').select2({
-                data: this.options,
-            }).on('select2:select', (ev: any) => {
+            this.select2 = $(this.el.nativeElement).find('select').select2(settings).on('select2:select', (ev: any) => {
                 const { id, text } = ev['params']['data'];
                 this.value = id;
                 this.onSelect.emit({ id, text });
