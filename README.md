@@ -51,6 +51,20 @@ export class YourModule {
 <select2 [options]="options" [settings]="{ setting: value }" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
 ```
 
+3. Compile settings.
+
+If you have set the `include` or `exclude` option in your `tsconfig.json`, you need to include the `node_modules/angular-select2-component/index.ts` file.
+
+``` json
+// tsconfig.json
+{
+  // ... other options
+  "include": [
+    "node_modules/angular-select2-component/index.ts"
+  ]
+}
+```
+
 ### Options
 - `options`: `option[]`
   - select options for select2
