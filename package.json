@@ -1,6 +1,6 @@
 {
   "name": "angular-select2-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "select2 in angular4(>=2.0-release)",
   "main": "index.ts",
   "scripts": {
