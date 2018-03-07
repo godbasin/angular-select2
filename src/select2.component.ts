@@ -11,7 +11,7 @@ import { CustomInputComponent, customInputAccessor } from './custom-input';
 
 @Component({
     selector: 'select2',
-    template: `<select class="form-control" [(ngModel)]="value" [disabled]="disabled"></select>`,
+    template: `<select class="form-control" [disabled]="disabled"></select>`,
     styleUrls: ['./select2/select2.min.css'],
     encapsulation: ViewEncapsulation.None,
     providers: [customInputAccessor(Select2Component)]
@@ -37,7 +37,15 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
     }
 
     ngAfterViewInit() {
-        this.select2.select2('val', [this.value]);
+        this.setSelect2Value();
+    }
+
+    setSelect2Value(){
+        if(this.value instanceof Array){
+            this.select2.select2('val', [...this.value]);
+        }else{
+            this.select2.select2('val', [this.value]);
+        }
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -57,13 +65,15 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
             }
             this.select2.trigger('change');
         }else{
-            this.select2 = $(this.el.nativeElement).find('select').select2(settings).on('select2:select', (ev: any) => {
-                const { id, text } = ev['params']['data'];
-                this.value = id;
-                this.onSelect.emit({ id, text });
+            this.select2 = $(this.el.nativeElement).find('select').select2(settings);
+            this.select2.on('select2:select select2:unselect', (ev: any) => {
+                const selectValue = this.select2.val();
+                this.value = selectValue;
+                const { id, text, selected } = ev['params']['data'];
+                this.onSelect.emit({ id, text, selected });
             });
         }
-        this.select2.select2('val', [this.value]);
+        this.setSelect2Value();
     }
 
     ngOnDestroy(){

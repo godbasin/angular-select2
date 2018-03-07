@@ -60,10 +60,12 @@ If you have set the `include` or `exclude` option in your `tsconfig.json`, you n
 - `options`: `option[]`
   - select options for select2
   - `option`: `{id: value, text: key}` or `string`
-- `ngModel`: option value that is selected(`id` or `string`)
+- `ngModel`: option value that is selected
+  - `id` or `string` while multiple is disable
+  - `id[]` or `string[]` while multiple is enable
 - `onSelect`
   - callback when option selected
-  - parmas: `option`(`{id: value, text: key}` or `string`)
+  - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
 - `settings`
   - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
   - `setting`: `{ settingOption: value, settingOption: value }`
