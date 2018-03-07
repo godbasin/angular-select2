@@ -11,6 +11,7 @@ const options2: any[] = ['2-1', '2-2', '2-3', '2-4', '2-5'];
 export class AppComponent {
   options: any[] = options1;
   optionSelected: any;
+  optionsSelected: any;
   inputVal: string = '';
 
   onSelect({id, text}){
@@ -25,5 +26,6 @@ export class AppComponent {
 
   changeValue(){
     this.optionSelected = this.inputVal;
+    this.optionsSelected = [this.inputVal];
   }
 }
