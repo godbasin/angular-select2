@@ -15,6 +15,11 @@ export class CustomInputComponent implements ControlValueAccessor {
     private model: any; // inner value
     private onChange: (_: any) => void;
     private onTouched: () => void;
+    private wirteValueCallback: () => void;
+
+    constructor(wirteValueCallback = () => {}){
+        this.wirteValueCallback = wirteValueCallback;
+    }
 
     // get accessor
     get value(): any {
@@ -38,6 +43,7 @@ export class CustomInputComponent implements ControlValueAccessor {
     writeValue(value: string): void {
         if (value !== this.model) {
             this.model = value;
+            this.wirteValueCallback();
         }
     }
 

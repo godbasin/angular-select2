@@ -32,7 +32,7 @@ export class Select2Component extends CustomInputComponent implements OnChanges,
     private el: ElementRef;
 
     constructor(el: ElementRef) {
-        super();
+        super(() => {this.setSelect2Value();});
         this.el = el;
     }
 
