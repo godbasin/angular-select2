@@ -54,10 +54,11 @@ export class Select2Component extends CustomInputComponent
 
   setSelect2Value() {
     if (this.value instanceof Array) {
-      this.select2.select2('val', [...this.value]);
+      this.select2.val([...this.value]);
     } else {
-      this.select2.select2('val', [this.value]);
+      this.select2.val([this.value]);
     }
+    this.select2.trigger('change');
   }
 
   ngOnChanges(changes: SimpleChanges) {
