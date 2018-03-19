@@ -1,6 +1,6 @@
 /**
  * desc：select2
- * how to use: <select2 [(ngModel)]='your_prop' [options]='your_options' [disabled]='your_condition' ></select2>
+ * how to use: <select-2 [(ngModel)]='your_prop' [options]='your_options' [disabled]='your_condition' ></select-2>
  */
 declare var require: any;
 const $ = require('jquery');
@@ -20,7 +20,7 @@ import {
 import { CustomInputComponent, customInputAccessor } from './custom-input';
 
 @Component({
-  selector: 'select2',
+  selector: 'select-2',
   template: `<select class="form-control" [disabled]="disabled"></select>`,
   styleUrls: ['./select2/select2.min.css'],
   encapsulation: ViewEncapsulation.None,
@@ -30,7 +30,7 @@ import { CustomInputComponent, customInputAccessor } from './custom-input';
 export class Select2Component extends CustomInputComponent
   implements OnChanges, OnDestroy, AfterViewInit {
   @Input() options: any[] = []; // object: {id, text} or array: []
-  @Input() disabled: boolean = false;
+  @Input() disabled = false;
   @Output() onSelect = new EventEmitter<any>();
 
   /**

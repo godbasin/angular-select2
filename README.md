@@ -39,7 +39,7 @@ export class YourModule {
 2. Template.
 
 ``` html
-<select2 [options]="options" [settings]="{ setting: value }" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select2>
+<select-2 [options]="options" [settings]="{ setting: value }" [(ngModel)]="optionSelected" (onSelect)="onSelect($event)"></select-2>
 ```
 
 3. Compile settings.
