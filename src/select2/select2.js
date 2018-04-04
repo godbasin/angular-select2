@@ -1157,6 +1157,10 @@ S2.define('select2/results',[
 
     container.on('results:focus', function (params) {
       params.element.addClass('select2-results__option--highlighted');
+      var data = params.data;
+      self.trigger('mouseover', {
+          data: data
+        });
     });
 
     container.on('results:message', function (params) {
@@ -2058,7 +2062,8 @@ S2.define('select2/selection/eventRelay',[
       'open', 'opening',
       'close', 'closing',
       'select', 'selecting',
-      'unselect', 'unselecting'
+      'unselect', 'unselecting',
+      'mouseover'
     ];
 
     var preventableEvents = ['opening', 'closing', 'selecting', 'unselecting'];
