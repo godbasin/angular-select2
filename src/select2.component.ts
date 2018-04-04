@@ -32,7 +32,7 @@ export class Select2Component extends CustomInputComponent
   @Input() options: any[] = []; // object: {id, text} or array: []
   @Input() disabled: boolean = false;
   @Output() onSelect = new EventEmitter<any>();
-
+  @Output() onMouseOver = new EventEmitter<any>();
   /**
    * Added options that control how the visuals of select2 works
    **/
@@ -86,6 +86,12 @@ export class Select2Component extends CustomInputComponent
         this.value = selectValue;
         const { id, text, selected } = ev['params']['data'];
         this.onSelect.emit({ id, text, selected });
+      });
+      this.select2.on('select2:mouseover', (ev: any) => {
+        const selectValue = this.select2.val();
+        this.value = selectValue;
+        const { id, text, selected } = ev['params']['data'];
+        this.onMouseOver.emit({ id, text, selected });
       });
     }
     this.setSelect2Value();
