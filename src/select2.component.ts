@@ -29,14 +29,14 @@ import { CustomInputComponent, customInputAccessor } from './custom-input';
 // ControlValueAccessor: A bridge between a control and a native element.
 export class Select2Component extends CustomInputComponent
   implements OnChanges, OnDestroy, AfterViewInit {
-  @Input() options: any[] = []; // object: {id, text} or array: []
+  @Input() options: any[]; // object: {id, text} or array: []
   @Input() disabled: boolean = false;
   @Output() onSelect = new EventEmitter<any>();
 
   /**
    * Added options that control how the visuals of select2 works
    **/
-  @Input() settings: object;
+  @Input() settings: any;
 
   select2: any;
   private el: ElementRef;
@@ -63,9 +63,11 @@ export class Select2Component extends CustomInputComponent
 
   ngOnChanges(changes: SimpleChanges) {
     // Merge both options and data
-    let settings = { data: this.options };
+    let settings = { data: this.options || [] } as any;
     if (typeof this.settings === 'object') {
-      settings = Object.assign(this.settings, settings);
+      settings = this.options
+        ? Object.assign(this.settings, settings)
+        : this.settings;
     }
 
     // Checking if the plugin is initialized
@@ -74,6 +76,12 @@ export class Select2Component extends CustomInputComponent
       if (changes.options) {
         // options change
         this.select2.empty();
+        this.select2.select2(settings);
+      } else if (changes.settings) {
+        // settings change
+        if (settings.data) {
+          this.select2.empty();
+        }
         this.select2.select2(settings);
       }
       this.select2.trigger('change');
