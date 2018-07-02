@@ -2,8 +2,10 @@
   "name": "angular-select2-component",
   "version": "1.1.4",
   "description": "select2 in angular4(>=2.0-release)",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,17 @@
   "engines": {
     "node": ">=4.2.4"
   },
-  "homepage": "https://github.com/godbasin/angular-select2#readme"
+  "homepage": "https://github.com/godbasin/angular-select2#readme",
+  "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "typescript": "~2.2.0"
+  }
 }
