@@ -36,6 +36,6 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "typescript": "~2.2.0"
+    "typescript": "^2.9.2"
   }
 }
