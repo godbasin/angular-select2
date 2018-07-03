@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc & cp -r src/select2 dist/src/select2"
+    "build": "tsc & mkdir -p dist/src & cp -r src/select2 dist/src/select2"
   },
   "repository": {
     "type": "git",
@@ -26,15 +26,6 @@
     "node": ">=4.2.4"
   },
   "homepage": "https://github.com/godbasin/angular-select2#readme",
-  "dependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
-  },
   "devDependencies": {
     "typescript": "^2.9.2"
   }
