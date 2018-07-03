@@ -6,8 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run rmrfdist && npm run buildandcopy",
-        "rmrfdist": "rm -rf dist",
-        "buildandcopy": "mkdir -p dist/src & cp -r src/select2 dist/src/select2 & tsc"
+    "rmrfdist": "rm -rf dist",
+    "buildandcopy": "mkdir -p dist/src & cp -r src/select2 dist/src/select2 & tsc",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
