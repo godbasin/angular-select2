@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc & mkdir -p dist/src & cp -r src/select2 dist/src/select2"
+    "build": "npm run rmrfdist && npm run buildandcopy",
+        "rmrfdist": "rm -rf dist",
+        "buildandcopy": "mkdir -p dist/src & cp -r src/select2 dist/src/select2 & tsc"
   },
   "repository": {
     "type": "git",
