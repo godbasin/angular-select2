@@ -2,8 +2,13 @@
   "name": "angular-select2-component",
   "version": "1.1.4",
   "description": "select2 in angular4(>=2.0-release)",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "npm run rmrfdist && npm run buildandcopy",
+    "rmrfdist": "rm -rf dist",
+    "buildandcopy": "mkdir -p dist/src & cp -r src/select2 dist/src/select2 & tsc",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,5 +28,8 @@
   "engines": {
     "node": ">=4.2.4"
   },
-  "homepage": "https://github.com/godbasin/angular-select2#readme"
+  "homepage": "https://github.com/godbasin/angular-select2#readme",
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  }
 }
