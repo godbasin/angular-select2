@@ -60,6 +60,8 @@ If you have set the `include` or `exclude` option in your `tsconfig.json`, you n
 {
   // ... other options
   "include": [
+    "src/**/*.ts",
+    "node_modules/angular-select2-component/src/*.ts",
     "node_modules/angular-select2-component/index.ts"
   ]
 }
